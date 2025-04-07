@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>basic calculator</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="container" >
+        <nav id="inp">
+            <input type="text" id="input" max-length="10">
+        </nav>
+        <div>
+            <button onclick="getInput('AC')" class="clean">
+                AC
+            </button>
+            <button onclick="getInput('Clear')" class="clean">
+                Clear
+            </button>
+        </div>
+        <div>
+            <button onclick="getInput(1)" class="num">
+                1
+            </button>
+            <button onclick="getInput(2)" class="num">
+                2
+            </button>
+            <button onclick="getInput(3)" class="num">
+                3
+            </button>
+            <button onclick="getInput('+')" class="operator">
+                +
+            </button>
+        </div>
+        <div>
+            <button onclick="getInput(4)" class="num">
+                4
+            </button>
+            <button  onclick="getInput(5)" class="num">
+                5
+            </button>
+            <button onclick="getInput(6)" class="num">
+                6
+            </button>
+            <button onclick="getInput('-')" class="operator">
+                -
+            </button>
+        </div>
+        <div>
+            <button onclick="getInput(7)" class="num">
+                7
+            </button>
+            <button onclick="getInput(8)" class="num">
+                8
+            </button>
+            <button onclick="getInput(9)" class="num">
+                9
+            </button>
+            <button onclick="getInput('*')" class="operator">
+                *
+            </button>
+        </div>
+        <div>
+            <button onclick="getInput('.')" class="num">
+                .
+            </button>
+            <button onclick="getInput(0)" class="num">
+                0
+            </button>
+            <button onclick="getInput('=')" class="operator">
+                =
+            </button>
+            <button onclick="getInput('/')" class="operator">
+                /
+            </button>
+        </div>
+    </div>
+    <script>
+        function getInput(i){
+            if(i=='='){
+                try{c=eval(sum);
+                        document.getElementById('input').value=c;}
+                   catch(c){ document.getElementById('input').value='Syntax Error';
+                }
+                
+            }
+            else if(i=='AC'){
+                document.getElementById('input').value='';
+            }
+            else if(i=='Clear'){
+                let newstr=sum.split('');
+                newstr.pop();
+                sum=document.getElementById('input').value=newstr.join('');
+            }
+            else{
+                sum=document.getElementById('input').value+=i;
+            }
+        }
+    </script>
+</body>
+</html>
